@@ -51,7 +51,7 @@ def run_via_cpython(filename):
     env = os.environ.copy()
     subprocess.check_call([sys.executable, filename], env=env)
 
-SKIP_BUILD = os.environ.get("RUSTPYTHON_TESTS_NOBUILD") == "true"
+SKIP_BUILD = os.environ.get("RUSTPYTHON_TESTS_NOBUILD") == "true" or True
 RUST_DEBUG = os.environ.get("RUSTPYTHON_DEBUG") == "true"
 RUST_PROFILE = "debug" if RUST_DEBUG else "release"
 
